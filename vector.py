@@ -1,7 +1,11 @@
 import numpy as np
 
+def chuan_hoa(data):
+    return data/255
+
 def get_vector(data):
+    data = chuan_hoa(data)
     data_shape = data.shape
-    sampleCount = data_shape[0]
-    res = np.empty((0, 0))
+    sample_count = data_shape[0]
+    res = data.reshape((sample_count, data_shape[1] * data_shape[2]))
     return res
